@@ -9,7 +9,6 @@
     let GameBoard = [[".", ".", "."], [".", ".", "."], [".", ".", "."]];
     let currentPlayer = Player1;
 
-    fInit();
     const cells = document.querySelectorAll(".cell");
 
     function turn(squareId, player) {
@@ -142,17 +141,5 @@
         document.getElementById("playerturn").classList.toggle("show");
         document.getElementById("playerturn1").classList.toggle("show");
     }
-
-    function fInit() {
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", function () {
-                navigator.serviceWorker.register
-                ("serviceworker.js").then(function (registration) {
-                    console.log("ServiceWorker registration successful with scope: ", registration.scope);
-                }, function (err) {
-                    console.log("ServiceWorker registration failed: ", err);
-                });
-            });
-        }
-    }
+    
 }());
